@@ -128,3 +128,106 @@ Open the local server link (usually http://localhost:8501/)
 All generated images & metadata are automatically stored in:
 generated_images/
 
+## 🎨 Prompt Engineering Tips
+
+### Example prompts
+a futuristic cyberpunk street at night, neon reflections, ultra realistic, 8k
+a cute baby dragon reading a book, soft lighting, watercolor illustration
+a majestic Indian temple at sunrise, golden light, high detail, DSLR lens
+
+### Negative prompt example
+ugly, extra limbs, deformed, blurry, watermark, lowres
+
+
+### Quality tokens
+HDR, cinematic lighting, hyperdetailed, volumetric light, high contrast 
+
+
+---
+
+## 🧯 Ethical & Responsible AI Usage
+
+- Unsafe keywords filtered
+- Watermark added:
+AI Generated • VisionCraft
+- Offline / privacy-safe execution
+
+---
+
+## ⚡ CPU vs GPU Performance
+
+| Hardware | Performance |
+|-----------|-------------|
+CPU | Slower (20–200 sec per image)
+GPU (`cuda`) | Fast (2–10 sec per image)
+
+Automatically selected via:
+
+
+---
+
+## 📁 Output & Metadata
+
+### Output structure
+generated_images/output_1.png
+generated_images/output_1.json
+
+
+### Example metadata
+```json
+{
+  "prompt": "...",
+  "model_used": "runwayml/stable-diffusion-v1-5",
+  "guidance": 7.5,
+  "steps": 20,
+  "style": "Photorealistic",
+  "timestamp": 123456
+}
+```
+⚠ Limitations
+
+Requires local model cache
+
+Basic safety filter only
+
+Slower on CPU
+
+No fine-tuning / training support yet
+
+🚀 Future Improvements
+
+SDXL, Turbo XL support
+
+ControlNet & LoRA support
+
+Image gallery/history page
+
+Fine-tuning & custom dataset training
+
+Advanced content safety
+📎 Sample Outputs
+
+Upload images under:
+
+samples/
+
+📬 Internship Submission Info
+
+Built for the Remote ML Internship Task — Talrn (2025)
+
+📩 Submission email:
+
+intern@talrn.com
+
+👤 Author
+
+Vadranapu Likith
+📍 India
+🎓 GITAM University (2023–2027)
+💻 AI/ML | Generative AI | Computer Vision
+
+⭐ Support
+
+If you like this project, please ⭐ star the repository 🙂 
+git push --set-upstream origin main
+
