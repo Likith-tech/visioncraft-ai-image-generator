@@ -184,7 +184,7 @@ generated_images/output_1.json
   "timestamp": 123456
 }
 ```
-⚠ Limitations
+##⚠ Limitations
 
 Requires local model cache
 
@@ -194,7 +194,7 @@ Slower on CPU
 
 No fine-tuning / training support yet
 
-🚀 Future Improvements
+##🚀 Future Improvements
 
 SDXL, Turbo XL support
 
@@ -207,7 +207,7 @@ Fine-tuning & custom dataset training
 Advanced content safety
 📎 Sample Outputs
 
-Upload images under:
+##Upload images under:
 
 samples/
 
@@ -215,18 +215,18 @@ samples/
 
 Built for the Remote ML Internship Task — Talrn (2025)
 
-📩 Submission email:
+##📩 Submission email:
 
 intern@talrn.com
 
-👤 Author
+##👤 Author
 
 Vadranapu Likith
 📍 India
 🎓 GITAM University (2023–2027)
 💻 AI/ML | Generative AI | Computer Vision
 
-⭐ Support
+##⭐ Support
 
 If you like this project, please ⭐ star the repository 🙂 
 git push --set-upstream origin main
