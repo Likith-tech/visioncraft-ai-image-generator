@@ -184,50 +184,47 @@ generated_images/output_1.json
   "timestamp": 123456
 }
 ```
-##⚠ Limitations
+## ⚠ Limitations
 
-Requires local model cache
+- Requires local model cache
+- Basic safety filter only
+- Slower on CPU
+- No fine-tuning / training support yet
 
-Basic safety filter only
+---
 
-Slower on CPU
+## 🚀 Future Improvements
 
-No fine-tuning / training support yet
+- SDXL, Turbo XL support
+- ControlNet & LoRA support
+- Image gallery / history page
+- Fine-tuning & custom dataset training
+- Advanced content safety filtering
 
-##🚀 Future Improvements
+---
 
-SDXL, Turbo XL support
+## 📎 Sample Outputs
 
-ControlNet & LoRA support
-
-Image gallery/history page
-
-Fine-tuning & custom dataset training
-
-Advanced content safety
-📎 Sample Outputs
-
-##Upload images under:
-
-samples/
-
-📬 Internship Submission Info
-
-Built for the Remote ML Internship Task — Talrn (2025)
-
-##📩 Submission email:
-
+Upload example images under:
 intern@talrn.com
 
-##👤 Author
 
-Vadranapu Likith
-📍 India
-🎓 GITAM University (2023–2027)
+---
+
+## 👤 Author
+
+**Vadranapu Likith**  
+📍 India  
+🎓 GITAM University (2023–2027)  
 💻 AI/ML | Generative AI | Computer Vision
 
-##⭐ Support
+---
 
-If you like this project, please ⭐ star the repository 🙂 
+## ⭐ Support
+
+If you like this project, please ⭐ star the repository 🙂
+
+```bash
 git push --set-upstream origin main
+
 
