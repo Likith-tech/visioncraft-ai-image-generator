@@ -1,0 +1,94 @@
+# app.py
+import streamlit as st
+import io
+from generate import TextToImageGenerator
+from utils import is_safe_prompt, add_text_watermark, save_image_with_metadata
+from PIL import Image
+
+st.set_page_config(page_title="Talrn AI Image Generator", layout="wide")
+st.title("🎨 Talrn AI Image Generator — VERSION 2 (TEST)")
+
+# Shared/cached generator (persists while server runs)
+@st.cache_resource
+def get_generator():
+    return TextToImageGenerator()
+
+gen = get_generator()
+
+# Sidebar controls
+with st.sidebar:
+    st.header("Model & Settings")
+    model_choice = st.selectbox("Choose model", ["sd-1.5", "sd-2.1", "sd-turbo"], index=0,
+                                help="sd-turbo = fast mode (lower per-step time)")
+    num_images = st.slider("Number of images", 1, 4, 1)
+    steps = st.slider("Inference steps", 8, 50, 20)
+    guidance = st.slider("Guidance (CFG scale)", 1.0, 15.0, 7.5)
+    fmt = st.selectbox("Export format", ["PNG", "JPEG"])
+    filename = st.text_input("Filename (optional, no extension)")
+    watermark = st.checkbox("Add watermark", value=True)
+    st.markdown("---")
+    st.write("Device detected:")
+    st.write("**GPU (cuda)**" if gen.device == "cuda" else "**CPU (fallback)**")
+
+# Main input
+prompt = st.text_area("Enter your prompt", height=140)
+negative_prompt = st.text_input("Negative prompt (optional)")
+
+# Basic NSFW check
+if not is_safe_prompt(prompt) or (negative_prompt and not is_safe_prompt(negative_prompt)):
+    st.error("Prompt blocked by simple NSFW keyword filter. Modify and try again.")
+else:
+    eta_seconds = gen.estimate_eta(model_choice, steps, num_images)
+    mins = eta_seconds // 60
+    secs = eta_seconds % 60
+    st.info(f"Estimated generation time: ~{mins}m {secs}s (heuristic)")
+
+    if st.button("Generate 🎨"):
+        if not prompt.strip():
+            st.error("Enter a prompt first.")
+        else:
+            # generate
+            with st.spinner("Generating... check terminal logs for details"):
+                images = gen.generate(prompt=prompt, negative_prompt=negative_prompt or None,
+                                      model_key=model_choice, num_images=num_images,
+                                      guidance_scale=guidance, num_inference_steps=steps)
+            # show & save results
+            cols = st.columns(len(images))
+            for i, img in enumerate(images):
+                disp = img
+                if watermark:
+                    try:
+                        disp = add_text_watermark(img, text="AI Generated — Talrn")
+                    except Exception:
+                        disp = img
+                buf = io.BytesIO()
+                out_name = filename.strip() or f"prompt_{int(time.time())}_{i+1}"
+                out_file = f"{out_name}.{fmt.lower()}"
+                disp.save(buf, format=fmt)
+                buf.seek(0)
+                cols[i].image(disp, use_container_width=True)
+                # save to disk
+                saved_path, meta_path = save_image_with_metadata(disp, prompt, negative_prompt, {
+                    "model": model_choice,
+                    "steps": steps,
+                    "guidance": guidance,
+                    "format": fmt,
+                    "index": i
+                }, filename=out_name, fmt=fmt)
+                cols[i].write(f"Saved: `{saved_path}`")
+                cols[i].download_button("Download", data=buf.getvalue(), file_name=out_file)
+            st.success(f"Generated {len(images)} image(s).")
+            st.balloons()
+
+# prompt history (basic)
+st.sidebar.markdown("### Prompt history")
+if "history" not in st.session_state:
+    st.session_state["history"] = []
+if prompt.strip():
+    # store latest
+    hist = st.session_state["history"]
+    if not hist or hist[0] != prompt:
+        st.session_state["history"].insert(0, prompt)
+        st.session_state["history"] = st.session_state["history"][:10]
+for h in st.session_state.get("history", [])[:6]:
+    st.sidebar.write(h)
