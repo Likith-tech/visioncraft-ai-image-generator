@@ -91,3 +91,38 @@ VisionCraft supports the following open-source text-to-image models via Hugging 
 ```bash
 git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
+
+###2Create & activate virtual environment
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
+###3Install dependencies
+pip install -r requirements.txt
+
+###Running the Application
+streamlit run app.py
+Open the local server link (usually http://localhost:8501/)
+
+## 🕹 How to Use
+
+1. Enter a **prompt** describing the image you want to generate
+2. *(Optional)* Enter a **negative prompt**
+3. Adjust settings in the sidebar:
+   - Number of images
+   - Resolution
+   - Inference steps
+   - Guidance scale
+   - Style
+   - Output format
+4. Choose the model (`SD v1.5` or `SD Turbo`)
+5. Click **Generate Image(s)**
+6. View the generated results
+7. Click **Download image** to save outputs
+
+All generated images & metadata are automatically stored in:
+generated_images/ 
