@@ -1,5 +1,4 @@
-# visioncraft-ai-image-generator
-AI Text-to-Image Generator using Stable Diffusion (Talrn ML Internship Project)
+
 # VisionCraft — AI Text-to-Image Generator
 
 VisionCraft is a simple, local-first **AI text-to-image generator** built as part of the **Remote Machine Learning Internship Task at Talrn (2025)**.
