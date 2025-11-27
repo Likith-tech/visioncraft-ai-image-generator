@@ -90,7 +90,7 @@ VisionCraft supports the following open-source text-to-image models via Hugging 
 
 ```bash
 git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+cd <your-repo-name> bash```
 
 ###2Create & activate virtual environment
 python -m venv venv
