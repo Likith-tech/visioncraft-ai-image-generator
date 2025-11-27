@@ -204,9 +204,9 @@ generated_images/output_1.json
 ---
 
 ## 📎 Sample Outputs
-
 Upload example images under:
-intern@talrn.com
+samples/
+
 
 
 ---
