@@ -92,6 +92,23 @@ VisionCraft supports the following open-source text-to-image models via Hugging 
 git clone https://github.com/<your-username>/<your-repo-name>.git
 cd <your-repo-name>
 ```
+###2. Create & activate virtual environment
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
+###3. Install dependencies
+pip install -r requirements.txt
+
+🚀 Running the Application
+streamlit run app.py
+
+
+Open the local server link (usually http://localhost:8501/)
 ## 🕹 How to Use
 
 1. Enter a **prompt** describing the image you want to generate
