@@ -205,13 +205,13 @@ generated_images/output_1.json
 
 ## 📎 Sample Outputs
 Upload example images under:
-samples/
+ samples/
 
 📬 Internship Submission Info
-This project was developed for the Remote Machine Learning Internship Task — Talrn (2025)
+ This project was developed for the Remote Machine Learning Internship Task — Talrn (2025)
 
 📩 Submission Email:
-intern@talrn.com
+ intern@talrn.com
 
 ---
 
