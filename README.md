@@ -208,7 +208,7 @@ Upload example images under:
 
 samples/
 
-##📬 Internship Submission Info
+## 📬 Internship Submission Info
 
  This project was developed for the Remote Machine Learning Internship Task — Talrn (2025)
 
