@@ -1,15 +1,15 @@
 [
   {
-    "prompt": "cyberpunk rabbit portrait, goggles, blacklight",
+    "prompt": "cyberpunk [animal] portrait, goggles, blacklight\n\n",
     "negative_prompt": "",
     "parameters": {
-      "model": "sd-turbo",
+      "model": "sd-1.5",
       "steps": 20,
       "guidance": 7.5,
       "format": "PNG",
       "index": 0
     },
-    "timestamp": "2025-11-26T21:26:01.350721",
+    "timestamp": "2025-11-26T20:09:31.942148",
     "filename": "hello.png",
     "format": "PNG"
   }
