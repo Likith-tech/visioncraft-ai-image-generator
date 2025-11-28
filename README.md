@@ -70,6 +70,28 @@ VisionCraft supports the following open-source text-to-image models via Hugging 
 > Models must be available in the local Hugging Face cache or downloaded once on the host machine (outside this repo).
 
 ---
+## 🧠 Background: GANs vs Diffusion Models
+
+Generative AI image models mainly evolved through two major approaches:
+
+### **GANs (Generative Adversarial Networks)**
+- Use a **Generator** (creates images) and a **Discriminator** (checks realism)
+- Trained in an adversarial setting, often unstable and difficult to tune
+- Can generate sharp and realistic images but prone to mode collapse
+- Used in earlier models like StyleGAN
+
+### **Diffusion Models**
+- Add noise to images gradually during training and learn to reverse the noise step-by-step
+- Much more stable and easier to train than GANs
+- Produce higher-quality and more consistent outputs
+- State-of-the-art for image synthesis today
+
+### **Why VisionCraft uses Diffusion**
+- Based on **Stable Diffusion**, a **Latent Diffusion Model (LDM)** that operates in a compressed latent space
+- Faster & more memory-efficient than pixel-space diffusion
+- Enables **high-quality generation on normal GPUs or even CPU**
+
+---
 
 ## ⚙️ Tech Stack
 
@@ -207,6 +229,7 @@ generated_images/output_1.json
 Upload example images under:
 
 samples/
+---
 
 ## 📬 Internship Submission Info
 
@@ -233,5 +256,21 @@ If you like this project, please ⭐ star the repository 🙂
 
 ```bash
 git push --set-upstream origin main
+
+```
+## 📥 Model Download (Required Before First Run)
+
+VisionCraft runs models locally and **does not download weights automatically** during execution.
+
+Before running the app, download at least one model manually into your local Hugging Face cache.  
+You only need to do this **once**.
+
+### Download Stable Diffusion v1.5
+Run the following command in a separate Python script or terminal:
+
+```bash
+python -c "from diffusers import StableDiffusionPipeline; StableDiffusionPipeline.from_pretrained('runwayml/stable-diffusion-v1-5')"
+
+python -c "from diffusers import AutoPipelineForText2Image; AutoPipelineForText2Image.from_pretrained('stabilityai/sd-turbo')"
 
 
