@@ -1,0 +1,11 @@
+{
+  "prompt": "portrait of Ukraine as a tough cat wearing a modern military helmet and goggles, ultra realistic, 8k, high detail, DSLR, cinematic lighting, sharp focus, highly detailed, professional photography",
+  "negative_prompt": "beautiful",
+  "model_requested": "stabilityai/sd-turbo",
+  "model_used": "runwayml/stable-diffusion-v1-5",
+  "num_images": 2,
+  "steps": 10,
+  "guidance": 9.48,
+  "style": "Photorealistic",
+  "timestamp": 1764179584
+}
