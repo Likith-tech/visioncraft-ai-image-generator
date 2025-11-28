@@ -3,13 +3,13 @@
     "prompt": "cyberpunk [animal] portrait, goggles, blacklight\n\n",
     "negative_prompt": "",
     "parameters": {
-      "model": "sd-1.5",
+      "model": "sd-turbo",
       "steps": 20,
       "guidance": 7.5,
       "format": "PNG",
       "index": 0
     },
-    "timestamp": "2025-11-26T20:09:31.942148",
+    "timestamp": "2025-11-26T19:50:02.273584",
     "filename": "hello.png",
     "format": "PNG"
   }
