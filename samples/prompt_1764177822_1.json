@@ -1,0 +1,11 @@
+{
+  "prompt": "cyberpunk rabbit portrait, goggles, blacklight",
+  "negative_prompt": "",
+  "model_requested": "stabilityai/sd-turbo",
+  "model_used": "runwayml/stable-diffusion-v1-5",
+  "num_images": 1,
+  "steps": 20,
+  "guidance": 7.5,
+  "style": "Default",
+  "timestamp": 1764177822
+}
